@@ -390,12 +390,12 @@ The elements NOT pointed to by `B` sounds like a complement, `B*`, up to the siz
 
 ### Logical Divide 1-D Example
 
-Consider tiling the 1-D layout `A = (2,4,3):(4,1,8)` with the tiler `B = 4:2`. Informally, this means that we have a 1-D vector of 24 elements in some storage order defined by `A` and we want to extract tiles of 4 elements strided by 2.
+Consider tiling the 1-D layout `A = (4,2,3):(4,1,8)` with the tiler `B = 4:2`. Informally, this means that we have a 1-D vector of 24 elements in some storage order defined by `A` and we want to extract tiles of 4 elements strided by 2.
 
 This is computed in the three steps described in the implementation above.
 * Complement of `B = 4:2` under `size(A) = 24` is `B* = (2,3):(1,8)`.
 * Concantenation of `(B,B*) = (4,(2,3)):(2,(1,8))`.
-* Composition of `A = (2,4,3):(4,1,8)` with `(B,B*)` is then `((2,2),(2,3)):((4,1),(2,8))`.
+* Composition of `A = (4,2,3):(4,1,8)` with `(B,B*)` is then `((2,2),(2,3)):((4,1),(2,8))`.
 
 <p align="center">
   <img src="../../images/cute/divide1.png" alt="divide1.png" height="150"/>
